@@ -15,5 +15,6 @@ sudo chown -R ubuntu:ubuntu /data/
 
 config_file="/etc/nginx/sites-available/default"
 sudo sed -i '/^\tlocation \/hbnb_static {/a\\t\talias /data/web_static/current/;' "$config_file"
+sudo sed -i '/^\tlocation \/hbnb_static {/a\\t\tindex index.html index.htm;' "$config_file"
 
 sudo service nginx restart
